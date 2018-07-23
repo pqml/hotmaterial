@@ -1,0 +1,1 @@
+{"id":"shader.vert","dependencies":[],"generated":{"js":"module.exports = `precision highp float;\n#define GLSLIFY 1\n\nattribute vec2 position;\nvarying vec2 vUv;\n\nvoid main () {\n  vUv = position;\n  gl_Position = vec4(1.0 - 2.0 * position, 0, 1);\n}\n`"},"hash":"7170f270c6f3b34a9d1bbc2530940640","cacheData":{}}

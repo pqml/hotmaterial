@@ -1,0 +1,26 @@
+{
+  "name": "@internet/hotshader",
+  "version": "0.0.1",
+  "description": "Wrapper for hot shader reloading",
+  "main": "index.js",
+  "scripts": {
+    "example:regl": "webpack-serve ./example/webpack.config.js -- regl",
+    "example:three": "webpack-serve ./example/webpack.config.js -- three"
+  },
+  "repository": "git@github.com:interneeeeet/hotshader.git",
+  "author": "pqml <hugo.piquemal@stinkstudios.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@internet/hmr": "^0.0.2",
+    "glsl-aastep": "^1.0.1",
+    "glslify-loader": "pqml/glslify-loader",
+    "parcel-plugin-glslify": "^0.1.0",
+    "raw-loader": "^0.5.1",
+    "regl": "^1.3.7",
+    "webpack": "^4.16.2",
+    "webpack-serve": "^2.0.2"
+  },
+  "dependencies": {
+    "@internet/dom": "^0.0.4"
+  }
+}
