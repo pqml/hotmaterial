@@ -4,6 +4,6 @@ attribute vec2 position;
 varying vec2 vUv;
 
 void main () {
-  vUv = position;
+  vUv = posiftion;
   gl_Position = vec4(1.0 - 2.0 * position, 0, 1);
 }
