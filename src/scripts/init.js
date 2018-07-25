@@ -1,4 +1,4 @@
-const TYPENAMES = {
+var TYPENAMES = {
   vert: 'vertex',
   frag: 'fragment'
 }
@@ -13,7 +13,7 @@ function subInit (state, type, obj) {
   }
 }
 
-export default function init(state, vertObj, fragObj) {
+export default function init (state, vertObj, fragObj) {
   subInit(state, 'vert', vertObj)
   subInit(state, 'frag', fragObj)
 }

@@ -4,11 +4,11 @@ export default function parseErrors (errors, code) {
   var splittedcode = code.split(/\n/)
   var list = {}
 
-  for (let i = 0; i < errors.length; i++) {
+  for (var i = 0; i < errors.length; i++) {
     if (errors[i].length < 3) continue
 
     var splitted = errors[i].trim().split(':')
-    var l1 = splitted.shift().trim()
+    splitted.shift().trim()
     var line = splitted.shift().trim()
     var extract = splitted.shift().trim()
     var msg = splitted.join(':').trim()

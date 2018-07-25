@@ -1,8 +1,12 @@
 import render from './render'
 import parseErrors from './parseErrors'
 
-var $ = document.createElement('canvas')
-var gl = $.getContext('webgl')
+var $, gl
+
+function initGlContext () {
+  $ = document.createElement('canvas')
+  gl = $.getContext('webgl')
+}
 
 function shader (type, code) {
   var shader = gl.createShader(type)
@@ -11,8 +15,8 @@ function shader (type, code) {
   return shader
 }
 
-function validateShader(shader, id, code) {
-  const errors = gl.getShaderInfoLog(shader)
+function validateShader (shader, id, code) {
+  var errors = gl.getShaderInfoLog(shader)
   if (errors.length > 0) {
     if (id) render(id, parseErrors(errors, code))
     return false
@@ -22,11 +26,46 @@ function validateShader(shader, id, code) {
   }
 }
 
+function programId (vid, fid) {
+  return vid && fid ? vid + '___linked___' + fid : null
+}
+
+function validateProgram (vs, fs, vid, fid) {
+  var program = gl.createProgram()
+  var id = programId(vid, fid)
+  gl.attachShader(program, vs)
+  gl.attachShader(program, fs)
+  gl.linkProgram(program)
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    var info = gl.getProgramInfoLog(program)
+    gl.deleteProgram(program)
+    id && render(id, {
+      programError: true,
+      vertId: vid,
+      fragId: fid,
+      error: info
+    })
+    return false
+  } else {
+    gl.deleteProgram(program)
+    id && render(id, {})
+    return true
+  }
+}
+
 export default function validate (state) {
+  if (!gl) initGlContext()
   var vs = shader(gl.VERTEX_SHADER, state.vertNext)
   var success = validateShader(vs, state.vertId, state.vertNext)
   var fs = shader(gl.FRAGMENT_SHADER, state.fragNext)
   success &= validateShader(fs, state.fragId, state.fragNext)
+
+  if (success) {
+    success &= validateProgram(vs, fs, state.vertId, state.fragId)
+  } else {
+    render(programId(state.vertId, state.fragId), {})
+  }
+
   gl.deleteShader(vs)
   gl.deleteShader(fs)
   return success

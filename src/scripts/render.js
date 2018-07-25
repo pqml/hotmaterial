@@ -1,14 +1,11 @@
-import createOverlay from '../components/overlay'
-import createShader from '../components/shader'
+import overlay from '../components/overlay'
 
 var $
 var errors = {}
-var visible = false
 var renderRequested = false
 
 function render (id, obj) {
   var hasErrors = !!(Object.keys(obj).length > 0)
-  console.log(hasErrors)
   if (hasErrors) errors[id] = obj
   else if (!hasErrors && errors[id]) delete errors[id]
   defferRender()
@@ -16,16 +13,21 @@ function render (id, obj) {
 
 function defferRender () {
   if (!renderRequested) {
-    requestAnimationFrame(defferedRender)
+    window.requestAnimationFrame(defferedRender)
     renderRequested = true
   }
 }
 
 function defferedRender () {
   renderRequested = false
-  if ($) $.parentNode.removeChild($)
-  $ = createOverlay({errors: errors})
-  document.body.appendChild($)
+  if ($) {
+    $.parentNode.removeChild($)
+    $ = undefined
+  }
+  if (Object.keys(errors).length > 0) {
+    $ = overlay({errors: errors})
+    document.body.appendChild($)
+  }
 }
 
 export default render

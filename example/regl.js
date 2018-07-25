@@ -1,11 +1,15 @@
-var regl = require('regl')()
-var hotProgram = require('../regl').default
+import createRegl from 'regl'
+import hotmaterial from '..'
+
+var regl = createRegl()
+document.title += ' - regl'
+
 var size = [0, 0]
 
 window.addEventListener('resize', resize)
 resize()
 
-const program = hotProgram(require('@internet/hmr!./shader.vert'), require('@internet/hmr!./shader.frag'))
+var program = hotmaterial(require('@internet/hmr!./shader.vert'), require('@internet/hmr!./shader.frag'))
 
 var draw = regl({
   frag: program.frag,
@@ -18,7 +22,7 @@ var draw = regl({
     ]
   },
   uniforms: {
-    time: function (f) { return 0.01 * f.tick },
+    time: function (f) { return f.time * 0.8 },
     resolution: function () { return size }
   },
   depth: {

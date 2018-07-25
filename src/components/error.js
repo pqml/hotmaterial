@@ -4,8 +4,11 @@ export default function createError (props) {
   return el('li', {
     textContent: props.code + ': ' + props.msg,
     css: {
-      listStyle: 'none',
-      padding: '0'
+      listStyle: 'inside',
+      padding: '0',
+      color: '#999',
+      fontSize: '14px',
+      lineHeight: '1.5em'
     }
   })
 }
