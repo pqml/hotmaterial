@@ -1,12 +1,13 @@
 {
   "name": "@internet/hotmaterial",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hot shader replacement and in-browser error handling",
   "main": "index.js",
   "module": "index.js",
   "files": [
     "index.js",
-    "three.js"
+    "three.js",
+    "src"
   ],
   "scripts": {
     "lint": "eslint src/**",
