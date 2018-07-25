@@ -1,7 +1,11 @@
 # Hot Material
 :art: Hot shader replacement and in-browser error handling (Webpack only)
 
-<br><br>
+<br>
+
+<img src="https://raw.githubusercontent.com/interneeeeet/hotmaterial/assets/preview.png">
+
+<br>
 
 ## Requirements / Recommandations
 - [webpack](https://webpack.js.org/) >= 3
