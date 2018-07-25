@@ -1,7 +1,7 @@
 {
   "name": "@internet/hotmaterial",
   "version": "0.0.1",
-  "description": "Wrapper for hot shader reloading",
+  "description": "Hot shader replacement and in-browser error handling",
   "main": "index.js",
   "module": "index.js",
   "files": [
@@ -14,8 +14,8 @@
     "example:three": "webpack-serve ./example/webpack.config.js -- three",
     "prepublishOnly": "\"$npm_execpath\" run lint"
   },
-  "repository": "git@github.com:pqml/hotshader.git",
-  "author": "pqml <hugo.piquemal@gmail.com>",
+  "repository": "git@github.com:pqml/hotmaterial.git",
+  "author": "pqml",
   "license": "MIT",
   "devDependencies": {
     "@internet/hmr": "^0.0.3",
