@@ -153,16 +153,19 @@ const program = hotmaterial(
 
 <br><br>
 
+## Running Examples
+```sh
+$ npm run example:regl
+$ npm run example:three
+```
+
+<br><br>
+
 ## License
 MIT.
 
-<br>
+<br><br><br>
 
-#
-
-<br>
-
-_`hotmaterial` is a package of the [@internet](https://www.npmjs.com/org/internet) npm scope. :globe_with_meridians:_
-
+<i>`hotmaterial` is a package of the [@internet](https://www.npmjs.com/org/internet) npm scope.</i>
 
 _[@internet](https://www.npmjs.com/org/internet) is a collection of opinionated and interoperables front-end npm ES6 modules, with minimal external dependencies._

@@ -18,7 +18,7 @@
   "author": "pqml <hugo.piquemal@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@internet/hmr": "^0.0.2",
+    "@internet/hmr": "^0.0.3",
     "eslint": "^5.2.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
@@ -33,7 +33,7 @@
     "webpack-serve": "^2.0.2"
   },
   "dependencies": {
-    "@internet/dom": "^0.0.4"
+    "@internet/dom": "^0.0.6"
   },
   "engines": {
     "node": ">=8"
