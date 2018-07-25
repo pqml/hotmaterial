@@ -154,14 +154,11 @@ MIT.
 
 <br><br>
 
----
+#
 
 <br>
 
-<center>
+_`hotmaterial` is a package of the [@internet](https://www.npmjs.com/org/internet) npm scope. :globe_with_meridians:_
 
-_ `hotmaterial` is a package of the [@internet](https://www.npmjs.com/org/internet) npm scope. :globe_with_meridians:_
-<br><br>
-_ [@internet](https://www.npmjs.com/org/internet) is a collection of opinionated and interoperables front-end npm ES6 modules, with minimal external dependencies._
 
-</center>
+_[@internet](https://www.npmjs.com/org/internet) is a collection of opinionated and interoperables front-end npm ES6 modules, with minimal external dependencies._
