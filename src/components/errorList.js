@@ -5,10 +5,12 @@ import error from './error'
 
 export default function errorList (props) {
   var $ = el('div')
-  var $ul = el('ul', { css: {
-    listStyle: 'none',
-    padding: '0 0 0 0'
-  }})
+  var $ul = el('ul', {
+    css: {
+      listStyle: 'none',
+      padding: '0 0 0 0'
+    }
+  })
 
   if (props.line && props.code) {
     $.appendChild(lineCode({

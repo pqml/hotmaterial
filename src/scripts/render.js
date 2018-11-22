@@ -25,7 +25,7 @@ function defferedRender () {
     $ = undefined
   }
   if (Object.keys(errors).length > 0) {
-    $ = overlay({errors: errors})
+    $ = overlay({ errors: errors })
     document.body.appendChild($)
   }
 }

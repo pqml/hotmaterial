@@ -4,10 +4,12 @@ import fileTitle from './fileTitle'
 import errorList from './errorList'
 
 export default function shader (props) {
-  var $ = el('div', { css: {
-    paddingBottom: '20px',
-    marginBottom: '40px'
-  }})
+  var $ = el('div', {
+    css: {
+      paddingBottom: '20px',
+      marginBottom: '40px'
+    }
+  })
 
   $.appendChild(
     fileTitle({

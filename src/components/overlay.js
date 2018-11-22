@@ -3,21 +3,23 @@ import shader from './shader'
 import program from './program'
 
 export default function overlay (props) {
-  var $ = el('div', { css: {
-    zIndex: 50000,
-    position: 'fixed',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    color: 'white',
-    fontSize: '14px',
-    fontFamily: '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
-    background: 'rgba(35, 35, 35, 0.8)',
-    padding: '4% 4% 3%',
-    fontWeight: '200',
-    overflow: 'auto'
-  }})
+  var $ = el('div', {
+    css: {
+      zIndex: 50000,
+      position: 'fixed',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      color: 'white',
+      fontSize: '14px',
+      fontFamily: '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
+      background: 'rgba(35, 35, 35, 0.8)',
+      padding: '4% 4% 3%',
+      fontWeight: '200',
+      overflow: 'auto'
+    }
+  })
 
   var k = Object.keys(props.errors)
 

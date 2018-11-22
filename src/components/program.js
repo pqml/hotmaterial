@@ -3,16 +3,20 @@ import { el } from '@internet/dom'
 import fileTitle from './fileTitle'
 
 export default function program (props) {
-  var $ = el('div', { css: {
-    paddingBottom: '20px',
-    marginBottom: '40px'
-  }})
+  var $ = el('div', {
+    css: {
+      paddingBottom: '20px',
+      marginBottom: '40px'
+    }
+  })
 
-  var $ul = el('ul', { css: {
-    listStyle: 'none',
-    padding: '0 0 0 0',
-    margin: '5px 0'
-  }})
+  var $ul = el('ul', {
+    css: {
+      listStyle: 'none',
+      padding: '0 0 0 0',
+      margin: '5px 0'
+    }
+  })
 
   var $error = el('li', {
     textContent: props.error,

@@ -5,7 +5,9 @@ var $, gl
 
 function initGlContext () {
   $ = document.createElement('canvas')
-  gl = $.getContext('webgl')
+  gl = $.getContext('webgl') ||
+    $.getContext('webgl-experimental') ||
+    $.getContext('experimental-webgl')
 }
 
 function shader (type, code) {
@@ -55,6 +57,10 @@ function validateProgram (vs, fs, vid, fid) {
 
 export default function validate (state) {
   if (!gl) initGlContext()
+
+  // gl context can't be init, juste return true to discard hotreloading
+  if (!gl) return true
+
   var vs = shader(gl.VERTEX_SHADER, state.vertNext)
   var success = validateShader(vs, state.vertId, state.vertNext)
   var fs = shader(gl.FRAGMENT_SHADER, state.fragNext)
