@@ -8,6 +8,10 @@ function initGlContext () {
   gl = $.getContext('webgl') ||
     $.getContext('webgl-experimental') ||
     $.getContext('experimental-webgl')
+
+  // Add all supported extensions
+  var exts = gl.getSupportedExtensions()
+  for (var i = 0, l = exts.length; i < l; i++) gl.getExtension(exts[i])
 }
 
 function shader (type, code) {
