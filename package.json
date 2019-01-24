@@ -22,7 +22,7 @@
     "@internet/eslint-config": "0.0.3",
     "@internet/hmr": "^0.0.3",
     "glsl-aastep": "^1.0.1",
-    "glslify-loader": "pqml/glslify-loader",
+    "glslify-loader": "^2.0.0",
     "raw-loader": "^0.5.1",
     "regl": "^1.3.7",
     "webpack": "^4.16.2",
