@@ -8,7 +8,7 @@
 <br>
 
 ## Requirements / Recommandations
-- [webpack](https://webpack.js.org/) >= 3
+- [webpack](https://webpack.js.org/) >= 3 (examples works on version 3, 4 & 5)
 - [@internet/hmr](https://github.com/pqml/hmr-loader) webpack loader to wrap your shaders in a hmr special object
 - [glslify-loader](https://github.com/glslify/glslify-loader) is recommended to load your shader
 - [three.js](https://github.com/mrdoob/three.js/) and [regl](https://github.com/regl-project/regl) are officialy supported but you can easily use it with another webgl library
