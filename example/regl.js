@@ -9,7 +9,10 @@ var size = [0, 0]
 window.addEventListener('resize', resize)
 resize()
 
-var program = hotmaterial(require('@internet/hmr!./shader.vert'), require('@internet/hmr!./shader.frag'))
+var program = hotmaterial(
+  require('@internet/hmr!./shader.vert'),
+  require('@internet/hmr!./shader.frag')
+)
 
 var draw = regl({
   frag: program.frag,
@@ -22,8 +25,12 @@ var draw = regl({
     ]
   },
   uniforms: {
-    time: function (f) { return f.time * 0.8 },
-    resolution: function () { return size }
+    time: function (f) {
+      return f.time * 0.8
+    },
+    resolution: function () {
+      return size
+    }
   },
   depth: {
     enable: false
@@ -32,7 +39,9 @@ var draw = regl({
 })
 
 regl.frame(function () {
-  regl.clear({ color: [0, 0, 0, 1] })
+  regl.clear({
+    color: [0, 0, 0, 1]
+  })
   draw()
 })
 

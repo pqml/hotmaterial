@@ -1,16 +1,16 @@
-
 const path = require('path')
 const env = process.argv[process.argv.length - 1]
 
 module.exports = {
   mode: 'development',
+  devtool: 'eval-cheap-source-map',
   entry: {
-    bundle: [path.join(__dirname, env + '.js')],
+    bundle: [path.join(__dirname, env + '.js')]
   },
   output: {
     path: __dirname,
     publicPath: '',
-    filename: '[name].js',
+    filename: '[name].js'
   },
   module: {
     rules: [{
@@ -23,8 +23,12 @@ module.exports = {
     }]
   },
   stats: 'minimal',
-  serve: {
-    content: __dirname,
-    devMiddleware: { stats: 'minimal' }
+  devServer: {
+    contentBase: __dirname,
+    hot: true,
+    liveReload: false,
+    historyApiFallback: true,
+    disableHostCheck: true,
+    stats: 'minimal'
   }
 }
