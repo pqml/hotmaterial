@@ -11,7 +11,7 @@ var renderer = new THREE.WebGLRenderer()
 var camera = new THREE.Camera()
 var scene = new THREE.Scene()
 var geometry = new THREE.BufferGeometry()
-geometry.addAttribute('position', new THREE.BufferAttribute(bigTriangle, 3))
+geometry.setAttribute('position', new THREE.BufferAttribute(bigTriangle, 3))
 
 var material = hotmaterial(
   require('@internet/hmr!./shader.vert'),
